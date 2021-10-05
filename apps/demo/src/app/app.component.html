@@ -1,0 +1,21 @@
+<header class="flex">
+  <img alt="Valant logo" width="150" src="../assets/valant_logo.png" />
+  <h1>Welcome to {{ title }}</h1>
+</header>
+<main>
+  <section>
+    <p>Upload Maze Template</p>
+    <input type="file" class="file-upload" (change)="uploadMazeTemplate($event)">
+  </section>
+
+  <section>
+    <p>Available Mazes</p>
+    <select id="mazeName" name="mazeName" (change)="getMazeTemplate($event)">
+      <option value="">---Select Maze--</option>
+      <option *ngFor="let mn of mazeNames" [ngValue]="mn">{{mn}}</option>
+    </select>
+  </section>
+  <section>
+    <canvas id="canvasMaze" height="480" width="720"></canvas>
+  </section>
+</main>
